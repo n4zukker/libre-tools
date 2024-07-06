@@ -1,0 +1,26 @@
+name: 'Download the youtube video channel inventory'
+on:
+  push:
+
+jobs:
+  list-videos:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+      -
+        name: 'Checkout from github'
+        uses: 'actions/checkout@v4'
+
+      - name: 'Login to docker hub'
+        uses: 'docker/login-action@v3'
+        with:
+          username: '${{ env.DOCKER_HUB_USER }}'
+          password: '${{ env.DOCKER_HUB_PAT  }}'
+
+      - name: 'Build image'
+        uses: 'docker/build-push-action@v5'
+        id: 'build'
+        with:
+          file: 'src/Dockerfile'
+          push: true
+          tags: 'blld3eeisj5r/libre-tools'
