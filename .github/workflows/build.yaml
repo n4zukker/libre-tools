@@ -1,6 +1,9 @@
-name: 'Download the youtube video channel inventory'
+name: 'Build and push libre-tools image'
 on:
   push:
+
+env:
+  DOCKER_HUB_USER: 'blld3eeisj5r'
 
 jobs:
   list-videos:
@@ -23,4 +26,4 @@ jobs:
         with:
           file: 'src/Dockerfile'
           push: true
-          tags: 'blld3eeisj5r/libre-tools'
+          tags: '${{ env.DOCKER_HUB_USER}}/libre-tools'
