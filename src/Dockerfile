@@ -8,7 +8,7 @@
 #RUN apt-get install --yes xsltproc libxml2-utils
 #RUN apt-get install --yes wget
 #=======
-FROM alpine:3.20
+FROM alpine:3.23.2
 
 RUN apk update
 RUN apk upgrade
