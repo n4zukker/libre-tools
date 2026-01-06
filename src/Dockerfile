@@ -3,7 +3,7 @@ FROM alpine:3.20
 RUN apk update
 RUN apk upgrade
 RUN apk add bash coreutils
-RUN apk add default-jre
+RUN apk add openjdk21-jre
 RUN apk add libreoffice libreoffice-java-common
 RUN apk add libxslt
 RUN apk add libxml2-utils
