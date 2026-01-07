@@ -6,7 +6,7 @@ env:
   DOCKER_HUB_USER: 'blld3eeisj5r'
 
 jobs:
-  list-videos:
+  build-push-image:
     runs-on: 'ubuntu-latest'
 
     steps:
