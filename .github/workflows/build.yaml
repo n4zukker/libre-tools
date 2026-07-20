@@ -19,18 +19,18 @@ jobs:
 
       -
         name: 'Checkout from github'
-        uses: 'actions/checkout@v4'
+        uses: 'actions/checkout@v7'
 
       -
         name: 'Login to docker hub'
-        uses: 'docker/login-action@v3'
+        uses: 'docker/login-action@v4.4.0'
         with:
           username: '${{ env.DOCKER_HUB_USER }}'
           password: '${{ secrets.DOCKER_HUB_PAT  }}'
 
       -
         name: 'Build image'
-        uses: 'docker/build-push-action@v5'
+        uses: 'docker/build-push-action@v7.3.0'
         id: 'build'
         with:
           file: 'src/Dockerfile'
