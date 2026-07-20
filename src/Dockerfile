@@ -1,14 +1,13 @@
-FROM alpine:3.23.2
+FROM ubuntu:26.04
 
-RUN apk update
-RUN apk upgrade
-RUN apk add bash coreutils fontconfig openjdk21-jre libreoffice libxslt libxml2-utils texmf-dist-fontsrecommended
+RUN apt-get update
+RUN apt-get install -y bash coreutils fontconfig openjdk-21-jre libreoffice libxslt1.1 libxml2-utils fonts-texgyre fonts-texgyre-math jq yq
 
-RUN wget https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-linux-amd64 -O /usr/bin/jq
-RUN chmod +x /usr/bin/jq
+#RUN wget https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-linux-amd64 -O /usr/bin/jq
+#RUN chmod +x /usr/bin/jq
 
-RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
-RUN chmod +x /usr/bin/yq
+#RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+#RUN chmod +x /usr/bin/yq
 
 #
 # I don't know why this is necessary.  It seems that apk add of the tex fonts should have
