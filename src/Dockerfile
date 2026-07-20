@@ -1,13 +1,13 @@
 FROM ubuntu:26.04
 
 RUN apt-get update
-RUN apt-get install -y bash coreutils fontconfig openjdk-21-jre libreoffice libxslt1.1 libxml2-utils fonts-texgyre fonts-texgyre-math jq yq
+RUN apt-get install -y bash coreutils fontconfig openjdk-21-jre libreoffice libxslt1.1 libxml2-utils fonts-texgyre fonts-texgyre-math jq yq wget
 
 #RUN wget https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-linux-amd64 -O /usr/bin/jq
 #RUN chmod +x /usr/bin/jq
 
-#RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
-#RUN chmod +x /usr/bin/yq
+RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+RUN chmod +x /usr/bin/yq
 
 #
 # I don't know why this is necessary.  It seems that apk add of the tex fonts should have
